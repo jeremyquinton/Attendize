@@ -19,8 +19,8 @@ class Event extends MyBaseModel
     protected $rules = [
         'title'               => ['required'],
         'description'         => ['required'],
-        'location_venue_name' => ['required_without:venue_name_full'],
-        'venue_name_full'     => ['required_without:location_venue_name'],
+        'location_venue_name' => ['required_with:venue_name_full'],
+        'venue_name_full'     => ['required_with:location_venue_name'],
         'start_date'          => ['required'],
         'end_date'            => ['required'],
         'organiser_name'      => ['required_without:organiser_id'],

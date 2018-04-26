@@ -53,9 +53,6 @@
                         </div>
                     </div>
 
-
-
-
                     <div class="form-group">
                         {!! Form::label('about', 'Organiser Description', array('class'=>'control-label ')) !!}
                         {!!  Form::textarea('about', Input::old('about'),
@@ -66,25 +63,30 @@
                                     ))  !!}
                     </div>
 
+                    <div class="form-group">
+                        {!! Form::label('chargetax', 'This organiser charges sales tax on tickets', array('class'=>'control-label ')) !!}
+                        {!! Form::checkbox('chargetax', 1, false, Input::old('chargetax'), array('class'=>'form-control'))  !!}
+                    </div>
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 {!! Form::label('taxid', 'Tax ID', array('class'=>'control-label required')) !!}
-                                {!! Form::text('taxid', Input::old('taxid'), array('class'=>'form-control', 'placeholder'=>'Tax ID'))  !!}
+                                {!! Form::text('taxid', Input::old('taxid'), array('class'=>'form-control', 'placeholder'=>'Your goverment tax ID'))  !!}
                             </div>
                         </div>
                         
                         <div class="col-md-3">
                             <div class="form-group">
                                 {!! Form::label('taxname', 'Tax name', array('class'=>'control-label required')) !!}
-                                {!! Form::text('taxname', Input::old('taxname'), array('class'=>'form-control', 'placeholder'=>'Tax name'))  !!}
+                                {!! Form::text('taxname', Input::old('taxname'), array('class'=>'form-control', 'placeholder'=>'e.g. VAT'))  !!}
                             </div>
                         </div>
 
                         <div class="col-md-3">
                             <div class="form-group">
-                                {!! Form::label('taxvalue', 'Tax value', array('class'=>'control-label required')) !!}
-                                {!! Form::text('taxvalue', Input::old('taxvalue'), array('class'=>'form-control', 'placeholder'=>'Tax Value'))  !!}
+                                {!! Form::label('taxvalue', 'Tax percentage', array('class'=>'control-label required')) !!}
+                                {!! Form::text('taxvalue', Input::old('taxvalue'), array('class'=>'form-control', 'placeholder'=>'e.g. 20.00'))  !!}
                             </div>
                         </div>
                     </div>

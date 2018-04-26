@@ -50,6 +50,7 @@ class OrganiserCustomizeController extends MyBaseController
         $organiser->enable_organiser_page = $request->get('enable_organiser_page');
         $organiser->facebook              = $request->get('facebook');
         $organiser->twitter               = $request->get('twitter');
+        $organiser->chargetax             = $request->get('chargetax');
         $organiser->taxname               = $request->get('taxname');
         $organiser->taxvalue              = $request->get('taxvalue');
         $organiser->taxid                 = $request->get('taxid');

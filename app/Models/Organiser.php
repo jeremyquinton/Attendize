@@ -16,9 +16,10 @@ class Organiser extends MyBaseModel
     protected $rules = [
         'name'           => ['required'],
         'email'          => ['required', 'email'],
-        'taxname'        => ['required','max:15'],
-        'taxvalue'       => ['required','numeric'],
-        'taxid'          => ['required','max:100'],
+        'chargetax'      => ['boolean'],
+        'taxname'        => ['required_with:chargetax', 'max:15'],
+        'taxvalue'       => ['required_with:chargetax', 'numeric'],
+        'taxid'          => ['required_with:chargetax', 'max:100'],
         'organiser_logo' => ['mimes:jpeg,jpg,png', 'max:10000'],
     ];
 
@@ -28,6 +29,7 @@ class Organiser extends MyBaseModel
      * @var array $attributes
      */
     protected $attributes = [
+        'chargetax'      => 'company tax ',
         'taxname'        => 'Tax Name',
         'taxvalue'       => 'Tax Rate',
         'taxid'          => 'Tax ID',
